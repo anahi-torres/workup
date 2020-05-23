@@ -1,0 +1,32 @@
+import React from 'react';
+import './Frase.css';
+import {Card, Jumbotron, Button} from 'react-bootstrap';
+
+export default () =>{
+    return(
+        <>
+            <Card className="m-3 fondo-frase border-white">
+                <Jumbotron className="color-frase d-flex align-items-center text-right">
+                    
+                    <div className=" tamaño-frase">
+                        <h1 className="mb-4">Empleá tu pasión!</h1>
+
+                        <p className="lead mb-2">
+                            Encontrá tu mejor trabajo!
+                        </p>
+
+
+                        <div className="h5 mb-5">
+                            Buscá trabajo en la bolsa de empleo líder en Argentina,
+                            <br /> encontrá las mejores ofertas de empleo y<br /> oportunidades de trabajo en tu área profesional.
+                        </div>
+                        <p>
+                            <Button variant="outline-info" className="rounded-pill">Registrarme</Button>
+                        </p>
+                    </div>
+
+                </Jumbotron>
+            </Card>
+        </>
+    )
+}
