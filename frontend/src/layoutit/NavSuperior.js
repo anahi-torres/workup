@@ -10,7 +10,7 @@ export default () =>{
 
                 <img style={{ height : "2rem", marginRight : "0.5rem" }} src={logo} alt="logo"/>
 
-                <Navbar.Brand href="#home">Workup</Navbar.Brand>
+                <Navbar.Brand href="#home">JOIN-jobs</Navbar.Brand>
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
 

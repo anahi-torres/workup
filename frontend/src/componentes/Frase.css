@@ -1,16 +1,4 @@
-.fondo-frase {
-    background: url('../images/Home.jpg') 0 50% no-repeat;
-    max-width: 900px;
-    background-size: 50%;
-    height: 600px;
-}
-
 .color-frase{
     background-color: transparent!important;
     height: 600px;
-}
-
-.tamaño-frase{
-    width: 900px;
-    margin-left: 70px;
 }

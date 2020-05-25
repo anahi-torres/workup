@@ -5,10 +5,10 @@ import {Card, Jumbotron, Button} from 'react-bootstrap';
 export default () =>{
     return(
         <>
-            <Card className="m-3 fondo-frase border-white">
+            <Card className="border-white fondo-frase">
                 <Jumbotron className="color-frase d-flex align-items-center text-right">
                     
-                    <div className=" tamaño-frase">
+                    <div>
                         <h1 className="mb-4">Empleá tu pasión!</h1>
 
                         <p className="lead mb-2">
