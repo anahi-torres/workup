@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Login.css';
 import {Card, Form, Button} from 'react-bootstrap';
-
+import Swal from 'sweetalert2';
 
 export default () =>{
 
@@ -10,12 +10,46 @@ export default () =>{
 
     const handleEmailChange = (event) =>{
         setEmail( event.target.value )
-        console.log(email)
     }
     
     const handleContraseñaChange = (event) =>{
         setContraseña( event.target.value )
-        console.log(contraseña)
+    }
+
+    const handleLoginClick = () =>{
+
+        let params = {
+                        email    : email,
+                        password : contraseña
+                     }
+
+        fetch('http://localhost:8888/auth', {
+                                                method: 'POST',
+                                                credentials : 'include',
+                                                body : JSON.stringify ( params ),
+                                                headers : {
+                                                            'Content-Type' : 'application/json'
+                                                          }
+                                            }
+        ).then( response => response.json() )
+        .then( data =>{
+               if ( data.status === 'ok'){
+                Swal.fire(
+                    {
+                       text: data.message,
+                       icon: 'success' 
+                    }
+                )
+               }else{
+                   Swal.fire(
+                       {
+                          text: data.message,
+                          icon: 'error' 
+                       }
+                   )
+               }
+           }
+        )
     }
 
     return(
@@ -51,7 +85,10 @@ export default () =>{
                                 />
                             </Form.Group>
                             <div>
-                                <Button variant="info" className="rounded-pill">
+                                <Button variant="info" 
+                                        className="rounded-pill"
+                                        onClick={handleLoginClick}
+                                >
                                     Iniciar sesión
                                 </Button>
                             </div>
