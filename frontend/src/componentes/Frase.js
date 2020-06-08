@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import './Frase.css';
 import {Card, Jumbotron, Button} from 'react-bootstrap';
 
@@ -20,9 +22,12 @@ export default () =>{
                             Buscá trabajo en la bolsa de empleo líder en Argentina,
                             <br /> encontrá las mejores ofertas de empleo y<br /> oportunidades de trabajo en tu área profesional.
                         </div>
-                        <p>
-                            <Button className="button-outline-blue rounded-pill">Registrarme</Button>
-                        </p>
+
+                        <Link to="/registro">
+                            <Button className="button-outline-blue rounded-pill">
+                                Registrarme
+                            </Button>
+                        </Link>
                     </div>
 
                 </Jumbotron>

@@ -1,16 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import './NavSuperior.css';
 import logo from '../images/LogoNav.png';
-import {Nav, Navbar, NavDropdown, Dropdown} from 'react-bootstrap';
+import {Nav, Navbar, Dropdown} from 'react-bootstrap';
 
 export default () =>{
     return(
         <>
             <Navbar className="fondo-nav-superior" expand="lg" variant="dark">
 
-                <img style={{ height : "3rem", marginRight : "0.2rem" }} src={logo} alt="logo"/>
+                <Link to="/">
 
-                <Navbar.Brand href="#home">JOIN-jobs</Navbar.Brand>
+                    <img style={{ height : "3rem", marginRight : "0.2rem" }} src={logo} alt="logo"/>
+
+                    <Navbar.Brand>JOIN-jobs</Navbar.Brand>
+
+                </Link>
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
 

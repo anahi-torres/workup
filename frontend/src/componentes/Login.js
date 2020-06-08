@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import './Login.css';
 import {Card, Form, Button} from 'react-bootstrap';
 import Swal from 'sweetalert2';
@@ -66,7 +68,8 @@ export default () =>{
                         <Form>
                             <Form.Group className="m-5 tamaño-input">
                          
-                                <Form.Control placeholder="Email" 
+                                <Form.Control placeholder="Email"
+                                              className="input-orange" 
                                               type="email"
                                               value={email}
                                               onChange={handleEmailChange}
@@ -79,6 +82,7 @@ export default () =>{
 
                             <Form.Group className="m-5 tamaño-input">
                                 <Form.Control placeholder="Contraseña" 
+                                              className="input-orange" 
                                               type="password"
                                               value={contraseña}
                                               onChange={handleContraseñaChange}
@@ -96,9 +100,14 @@ export default () =>{
                             
                                 ¿Todavía no tenes cuenta?
 
-                                <Button variant="link">
-                                    Registrate!
-                                </Button>
+                                <Link to="/registro">
+
+                                    <Button variant="link">
+                                        ¡Registrate!
+                                    </Button>
+
+                                </Link>
+                                
                             </div>
                         </Form>
 
