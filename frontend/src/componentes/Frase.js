@@ -21,7 +21,7 @@ export default () =>{
                             <br /> encontrá las mejores ofertas de empleo y<br /> oportunidades de trabajo en tu área profesional.
                         </div>
                         <p>
-                            <Button variant="outline-info" className="rounded-pill">Registrarme</Button>
+                            <Button className="button-outline-blue rounded-pill">Registrarme</Button>
                         </p>
                     </div>
 

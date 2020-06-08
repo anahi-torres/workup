@@ -1,14 +1,14 @@
 import React from 'react';
 import './NavSuperior.css';
-import logo from '../images/carrito.png';
-import {Nav, Navbar, NavDropdown} from 'react-bootstrap';
+import logo from '../images/LogoNav.png';
+import {Nav, Navbar, NavDropdown, Dropdown} from 'react-bootstrap';
 
 export default () =>{
     return(
         <>
             <Navbar className="fondo-nav-superior" expand="lg" variant="dark">
 
-                <img style={{ height : "2rem", marginRight : "0.5rem" }} src={logo} alt="logo"/>
+                <img style={{ height : "3rem", marginRight : "0.2rem" }} src={logo} alt="logo"/>
 
                 <Navbar.Brand href="#home">JOIN-jobs</Navbar.Brand>
 
@@ -16,18 +16,19 @@ export default () =>{
 
                 <Navbar.Collapse id="basic-navbar-nav">
 
-                    <Nav className="mr-auto">
+                    <Nav className="ml-auto">
 
+                        <Dropdown>
+                            <Dropdown.Toggle  variant="outline-light" id="dropdown-basic">
+                                Menu principal
+                            </Dropdown.Toggle>
 
-                        <NavDropdown title="Menu principal" id="basic-nav-dropdown">
-
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-
-                        </NavDropdown>
+                            <Dropdown.Menu>
+                                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
 
                     </Nav>
 

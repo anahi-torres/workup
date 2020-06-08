@@ -4,3 +4,25 @@
   justify-content: space-evenly;
   align-items: center;
 }
+
+.button-blue{
+  background-color: #083d77 !important;
+  border-color: #083d77 !important;
+}
+
+.button-blue:hover {
+  background-color: #08223d !important;
+  border-color: #08223d !important;
+}
+
+.button-outline-blue{
+  background-color: #ffffff !important;
+  border-color: #083d77 !important;
+  color: #083d77 !important;
+}
+
+.button-outline-blue:hover {
+  background-color: #08223d !important;
+  border-color: #08223d !important;
+  color: #ffffff !important;
+}

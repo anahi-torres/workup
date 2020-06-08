@@ -32,7 +32,7 @@ export default () =>{
                                                           }
                                             }
         ).then( response => response.json() )
-        .then( data =>{
+         .then( data =>{
                if ( data.status === 'ok'){
                 Swal.fire(
                     {
@@ -85,19 +85,21 @@ export default () =>{
                                 />
                             </Form.Group>
                             <div>
-                                <Button variant="info" 
-                                        className="rounded-pill"
+                                <Button 
+                                        className="rounded-pill button-blue"
                                         onClick={handleLoginClick}
                                 >
                                     Iniciar sesión
                                 </Button>
                             </div>
+                            <div className="m-4">
+                            
+                                ¿Todavía no tenes cuenta?
 
-                            ¿Todavía no tenes cuenta?
-
-                            <Button className="m-4" variant="link">
-                                Registrate!
-                            </Button>
+                                <Button variant="link">
+                                    Registrate!
+                                </Button>
+                            </div>
                         </Form>
 
                     </Card.Text>
