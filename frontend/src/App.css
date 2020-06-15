@@ -32,3 +32,13 @@
   border-radius: inherit !important;
   border-bottom: 1.5px solid #f95738 !important;
 }
+
+.sombra{
+  -webkit-box-shadow: 0 4px 8px 0 #777, 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 4px 8px 0 #777, 0 10px 6px -6px #777;
+  box-shadow: 0 4px 8px 0 #777, 0 10px 6px -6px #777;
+}
+
+.colour-text{
+  color: #4C5454;
+}

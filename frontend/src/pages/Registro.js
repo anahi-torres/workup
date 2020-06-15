@@ -7,58 +7,60 @@ export default () =>{
 
     return(
         <>
-            <Card border="light flex-grow-1 m-5">
+            <div className="d-flex justify-content-center colour-text">
+                <Card className="m-5 sombra " style={{ width: '25rem'}}>
 
-                <Card.Body className="d-flex align-items-center justify-content-center text-center">
+                    <Card.Body className="d-flex align-items-center justify-content-center text-center m-5">
 
-                    <Card.Text> 
+                        <Card.Text> 
 
-                        <Card.Title as="h2" className="mb-5">Registrate</Card.Title>
+                            <Card.Title as="h2" className="mb-5">Registrate</Card.Title>
 
-                        <Form>
-                            <Form.Group className="m-5 tamaño-input">
-                        
-                                <Form.Control placeholder="Email" 
-                                              type="email"
-                                              className="input-orange"
-                                />
-
-                                <Form.Text className="text-muted">
-                                    Ingrese su correo electrónico
-                                </Form.Text>
-                            </Form.Group>
-
-                            <Form.Group className="m-5 tamaño-input">
-                                <Form.Control placeholder="Contraseña" 
-                                              type="password"
-                                              className="input-orange"
-                                />
-                            </Form.Group>
-                            <div>
-                                <Button 
-                                        className="rounded-pill button-blue"
-                                >
-                                    Registrarse
-                                </Button>
-                            </div>
-                            <div className="m-4">
+                            <Form>
+                                <Form.Group className="m-5 tamaño-input">
                             
-                                ¿Ya tenés una cuenta?
+                                    <Form.Control placeholder="Email" 
+                                                type="email"
+                                                className="input-orange"
+                                    />
 
-                                <Link to="/">
+                                    <Form.Text className="text-muted">
+                                        Ingrese su correo electrónico
+                                    </Form.Text>
+                                </Form.Group>
 
-                                    <Button variant="link">
-                                        ¡Iniciar sesión!
+                                <Form.Group className="m-5 tamaño-input">
+                                    <Form.Control placeholder="Contraseña" 
+                                                type="password"
+                                                className="input-orange"
+                                    />
+                                </Form.Group>
+                                <div>
+                                    <Button 
+                                            className="rounded-pill button-blue"
+                                    >
+                                        Registrarse
                                     </Button>
+                                </div>
+                                <div className="m-3">
+                                
+                                    ¿Ya tenés una cuenta?
 
-                                </Link>
-                            </div>
-                        </Form>
+                                    <Link to="/">
 
-                    </Card.Text>
-                </Card.Body>
+                                        <Button variant="link">
+                                            ¡Iniciar sesión!
+                                        </Button>
 
-            </Card>
+                                    </Link>
+                                </div>
+                            </Form>
+
+                        </Card.Text>
+                    </Card.Body>
+
+                </Card>
+            </div>
         </>
     )
 

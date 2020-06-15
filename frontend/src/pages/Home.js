@@ -7,7 +7,7 @@ export default () => {
   return (
     <>
 
-        <div className="d-flex justify-content-between flex-wrap mb-3">
+        <div className="d-flex justify-content-between flex-wrap mb-3 colour-text">
 
             <ImagenHome />
 
