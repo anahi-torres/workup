@@ -5,7 +5,7 @@ import './Login.css';
 import {Card, Form, Button} from 'react-bootstrap';
 import Swal from 'sweetalert2';
 
-export default () =>{
+export default (props) =>{
 
     const history = useHistory()
 
@@ -38,12 +38,7 @@ export default () =>{
         ).then( response => response.json() )
          .then( data =>{
                if ( data.status === 'ok'){
-                    Swal.fire(
-                        {
-                        text: data.message,
-                        icon: 'success' 
-                        }
-                    )
+                    props.setLoggedUser(data.user)
                     history.push('/home')
                }else{
                    Swal.fire(

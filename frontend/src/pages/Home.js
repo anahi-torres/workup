@@ -3,7 +3,7 @@ import Login from '../componentes/Login';
 import Frase from '../componentes/Frase';
 import ImagenHome from '../componentes/ImagenHome';
 
-export default () => {
+export default (props) => {
   return (
     <>
 
@@ -13,7 +13,7 @@ export default () => {
 
             <Frase />
 
-            <Login />
+            <Login setLoggedUser={props.setLoggedUser} />
 
         </div>
 

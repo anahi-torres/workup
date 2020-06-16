@@ -26,10 +26,12 @@ router.post('/', (req, res) =>{
                 }
                 else{
                     if ( result.length == 1 ){
+
                         res.json(
                             {
                                 status  : 'ok',
-                                message : 'sesión iniciada'
+                                message : 'sesión iniciada',
+                                user    : result
                             }
                         )
                     }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import './UserHome.css';
 import { Card, Button } from 'react-bootstrap';
@@ -24,7 +25,9 @@ export default () => {
 
                     <div className="d-flex justify-content-around flex-wrap mt-5 mb-5">
 
-                        <Button className="m-1 rounded-pill button-blue sombra">Busco trabajo</Button>
+                        <Link to="/form">
+                            <Button className="m-1 rounded-pill button-blue sombra">Busco trabajo</Button>
+                        </Link>
 
                         <Button className="m-1 rounded-pill button-blue sombra">Soy recuiter</Button>
                     </div>
