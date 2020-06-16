@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import './Login.css';
 import {Card, Form, Button} from 'react-bootstrap';
 import Swal from 'sweetalert2';
 
 export default () =>{
+
+    const history = useHistory()
 
     const [ email, setEmail ] = useState('')
     const [ contraseña, setContraseña ] = useState('')
@@ -36,12 +38,13 @@ export default () =>{
         ).then( response => response.json() )
          .then( data =>{
                if ( data.status === 'ok'){
-                Swal.fire(
-                    {
-                       text: data.message,
-                       icon: 'success' 
-                    }
-                )
+                    Swal.fire(
+                        {
+                        text: data.message,
+                        icon: 'success' 
+                        }
+                    )
+                    history.push('/home')
                }else{
                    Swal.fire(
                        {

@@ -8,7 +8,7 @@ import {Nav, Navbar, Dropdown} from 'react-bootstrap';
 export default () =>{
     return(
         <>
-            <Navbar className="fondo-nav-superior" expand="lg" variant="dark">
+            <Navbar className="fondo-nav" expand="lg" variant="dark">
 
                 <Link to="/">
 
