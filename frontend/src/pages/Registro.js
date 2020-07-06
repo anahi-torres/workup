@@ -1,9 +1,59 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 import {Card, Form, Button} from 'react-bootstrap';
+import Swal from 'sweetalert2';
 
 export default () =>{
+
+    const history = useHistory()
+
+    const [ email, setEmail ] = useState('')
+    const [ contraseña, setContraseña ] = useState('')
+    const [ nombre, setNombre ] = useState('')
+    const [ apellido, setApellido ] = useState('')
+
+    const handleRegisterClick = () =>{
+
+        let params = {
+                        email      : email,
+                        contraseña : contraseña,
+                        nombre     : nombre,
+                        apellido   : apellido
+                     }
+
+        fetch( 'http://localhost:8888/auth/registro', {
+                                                        method: 'POST',
+                                                        credentials : 'include',
+                                                        body : JSON.stringify ( params ),
+                                                        headers : {
+                                                                    'Content-Type' : 'application/json'
+                                                                  }
+                                                      }
+        ).then( response => response.json() 
+        ).then( data =>{
+
+                if ( data.status === 'ok'){
+                    Swal.fire(
+                        {
+                           text: data.message,
+                           icon: 'success' 
+                        }
+                    )
+                    history.push('/')
+                }else{
+                    Swal.fire(
+                        {
+                           text: data.message,
+                           icon: 'error' 
+                        }
+                    )
+                }
+
+            }
+        )
+
+    }
 
     return(
         <>
@@ -17,31 +67,64 @@ export default () =>{
                             <Card.Title as="h2" className="mb-5">Registrate</Card.Title>
 
                             <Form>
+
                                 <Form.Group className="m-5 tamaño-input">
                             
                                     <Form.Control placeholder="Email" 
-                                                type="email"
-                                                className="input-orange"
+                                                  type="email"
+                                                  className="input-orange"
+                                                  value={email}
+                                                  onChange={ event => { setEmail(event.target.value) } }
                                     />
 
                                     <Form.Text className="text-muted">
                                         Ingrese su correo electrónico
                                     </Form.Text>
+
                                 </Form.Group>
 
                                 <Form.Group className="m-5 tamaño-input">
+
                                     <Form.Control placeholder="Contraseña" 
-                                                type="password"
-                                                className="input-orange"
+                                                  type="password"
+                                                  className="input-orange"
+                                                  value={contraseña}
+                                                  onChange={ event => { setContraseña(event.target.value) } }
                                     />
+
                                 </Form.Group>
+
+                                <Form.Group className="m-5 tamaño-input">
+
+                                    <Form.Control placeholder="Nombre" 
+                                                  type="text"
+                                                  className="input-orange"
+                                                  value={nombre}
+                                                  onChange={ event => { setNombre(event.target.value) } }
+                                    />
+
+                                </Form.Group>
+
+                                <Form.Group className="m-5 tamaño-input">
+
+                                    <Form.Control placeholder="Apellido" 
+                                                  type="text"
+                                                  className="input-orange"
+                                                  value={apellido}
+                                                  onChange={ event => { setApellido(event.target.value) } }
+                                    />
+
+                                </Form.Group>
+
                                 <div>
                                     <Button 
                                             className="rounded-pill button-blue"
+                                            onClick={handleRegisterClick}
                                     >
                                         Registrarse
                                     </Button>
                                 </div>
+
                                 <div className="m-3">
                                 
                                     ¿Ya tenés una cuenta?
@@ -54,6 +137,7 @@ export default () =>{
 
                                     </Link>
                                 </div>
+
                             </Form>
 
                         </Card.Text>

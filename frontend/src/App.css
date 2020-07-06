@@ -27,6 +27,10 @@
   color: #ffffff !important;
 }
 
+.tamaño-input{
+  width: 300px;
+}
+
 .input-orange{
   border: none !important;
   border-radius: inherit !important;

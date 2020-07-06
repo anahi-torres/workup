@@ -29,7 +29,7 @@ export default () => {
                             <Button className="m-1 rounded-pill button-blue sombra">Busco trabajo</Button>
                         </Link>
 
-                        <Button className="m-1 rounded-pill button-blue sombra">Soy recuiter</Button>
+                        <Button className="m-1 rounded-pill button-blue sombra">Soy recruiter</Button>
                     </div>
                 </Card>
 

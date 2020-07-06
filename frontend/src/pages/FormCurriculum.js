@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Card, Form, Button } from 'react-bootstrap';
+import AutoCompletado from '../componentes/AutoCompletado';
 
 export default () =>{
 
@@ -48,6 +49,8 @@ export default () =>{
                             <Form.Label>Salario pretendido</Form.Label>
                             <Form.Control type="text" className="input-orange" />
                         </Form.Group>
+
+                        <AutoCompletado />
 
                     </Card.Body>
 
