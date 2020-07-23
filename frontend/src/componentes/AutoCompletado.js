@@ -1,8 +1,8 @@
 import React from 'react';
 import Chip from '@material-ui/core/Chip';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,8 +13,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Tags() {
+export default function Tags(props) {
   const classes = useStyles();
+
+  const onChangeTecnologias = (event, values, reason) =>{
+    props.handleTecnologias(values);
+    console.log(values);
+  }
 
   return (
     <div className={classes.root}>
@@ -28,16 +33,18 @@ export default function Tags() {
           value.map((option, index) => (
             <Chip label={option} {...getTagProps({ index })} />
           ))
+        
         }
+        onChange={ onChangeTecnologias }
         renderInput={(params) => (
           <TextField {...params} variant="standard" label="Elegí tus lenguajes y tecnologías preferidas" placeholder="Ej: Java" />
         )}
       />
+
     </div>
   );
 }
 
-// Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const tecnologias = [
   { title: 'Javascript' },
   { title: 'Node Js' },
