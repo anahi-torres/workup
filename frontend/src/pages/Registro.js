@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 import {Card, Form, Button} from 'react-bootstrap';
 import Swal from 'sweetalert2';
+import ImagenHome from '../componentes/ImagenHome';
 
 export default () =>{
 
@@ -57,44 +58,21 @@ export default () =>{
 
     return(
         <>
-            <div className="d-flex justify-content-center colour-text">
-                <Card className="m-5 sombra " style={{ width: '25rem'}}>
+            <div className="d-flex justify-content-between colour-text flex-wrap ">
 
-                    <Card.Body className="d-flex align-items-center justify-content-center text-center m-5">
+                <ImagenHome />
+
+                <Card className="flex-grow-1 border-white">
+
+                    <Card.Body className="d-flex align-items-center justify-content-center text-center">
 
                         <Card.Text> 
 
-                            <Card.Title as="h2" className="mb-5">Registrate</Card.Title>
+                            <Card.Title as="h2" className="m-5">Registrate</Card.Title>
 
                             <Form>
 
-                                <Form.Group className="m-5 tamaño-input">
-                            
-                                    <Form.Control placeholder="Email" 
-                                                  type="email"
-                                                  className="input-orange"
-                                                  value={email}
-                                                  onChange={ event => { setEmail(event.target.value) } }
-                                    />
-
-                                    <Form.Text className="text-muted">
-                                        Ingrese su correo electrónico
-                                    </Form.Text>
-
-                                </Form.Group>
-
-                                <Form.Group className="m-5 tamaño-input">
-
-                                    <Form.Control placeholder="Contraseña" 
-                                                  type="password"
-                                                  className="input-orange"
-                                                  value={contraseña}
-                                                  onChange={ event => { setContraseña(event.target.value) } }
-                                    />
-
-                                </Form.Group>
-
-                                <Form.Group className="m-5 tamaño-input">
+                                <Form.Group className="m-3">
 
                                     <Form.Control placeholder="Nombre" 
                                                   type="text"
@@ -105,13 +83,37 @@ export default () =>{
 
                                 </Form.Group>
 
-                                <Form.Group className="m-5 tamaño-input">
+                                <Form.Group className="m-3 mt-5">
 
                                     <Form.Control placeholder="Apellido" 
                                                   type="text"
                                                   className="input-orange"
                                                   value={apellido}
                                                   onChange={ event => { setApellido(event.target.value) } }
+                                    />
+
+                                </Form.Group>
+
+                                <Form.Group className="m-3 mt-5">
+                            
+                                    <Form.Control placeholder="Email" 
+                                                  type="email"
+                                                  className="input-orange"
+                                                  value={email}
+                                                  onChange={ event => { setEmail(event.target.value) } }
+                                    />
+
+                                    
+
+                                </Form.Group>
+
+                                <Form.Group className="m-3 mt-5 mb-5">
+
+                                    <Form.Control placeholder="Contraseña" 
+                                                  type="password"
+                                                  className="input-orange"
+                                                  value={contraseña}
+                                                  onChange={ event => { setContraseña(event.target.value) } }
                                     />
 
                                 </Form.Group>
