@@ -5,7 +5,7 @@ import './ImagenHome.css';
 export default () =>{
     return(
         <>
-            <div className="fondo-imagen"></div>
+            <div className="d-none d-xl-block fondo-imagen"></div>
         </>
     )
 }

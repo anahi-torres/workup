@@ -54,7 +54,7 @@ export default (props) =>{
 
     return(
         <>
-            <Card border="light flex-grow-1">
+            <Card border="white flex-grow-1">
 
 
                 <Card.Body className="d-flex align-items-center justify-content-center text-center">
@@ -64,7 +64,7 @@ export default (props) =>{
                         <Card.Title as="h2" className="mb-5">Iniciar sesión</Card.Title>
 
                         <Form>
-                            <Form.Group className="m-5 tamaño-input">
+                            <Form.Group className="m-3 mt-5">
                          
                                 <Form.Control placeholder="Email"
                                               className="input-orange" 
@@ -78,7 +78,7 @@ export default (props) =>{
                                 </Form.Text>
                             </Form.Group>
 
-                            <Form.Group className="m-5 tamaño-input">
+                            <Form.Group className="m-3  mt-5">
                                 <Form.Control placeholder="Contraseña" 
                                               className="input-orange" 
                                               type="password"
@@ -86,7 +86,7 @@ export default (props) =>{
                                               onChange={handleContraseñaChange}
                                 />
                             </Form.Group>
-                            <div>
+                            <div className="mt-5">
                                 <Button 
                                         className="rounded-pill button-blue"
                                         onClick={handleLoginClick}
